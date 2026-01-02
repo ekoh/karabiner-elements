@@ -1,0 +1,358 @@
+{
+  "global": { "show_in_menu_bar": false },
+  "profiles": [
+    {
+      "devices": [
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 2406,
+            "vendor_id": 3897
+          },
+          "simple_modifications": [
+            {
+              "from": { "key_code": "left_control" },
+              "to": [{ "key_code": "left_command" }]
+            },
+            {
+              "from": { "key_code": "left_command" },
+              "to": [{ "key_code": "left_control" }]
+            },
+            {
+              "from": { "key_code": "right_control" },
+              "to": [{ "key_code": "right_command" }]
+            },
+            {
+              "from": { "key_code": "right_command" },
+              "to": [{ "key_code": "right_control" }]
+            }
+          ]
+        },
+        {
+          "identifiers": { "is_keyboard": true },
+          "ignore": true
+        }
+      ],
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Shift + keypad nav cluster (Home/End/PgUp/PgDn + Arrows + Ins/Del) (only for vendor 3897 product 2406)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_7", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "home" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_1", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "end" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_9", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "page_up" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_3", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "page_down" }]
+              },
+
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_8", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "up_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_2", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "down_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_4", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "left_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_6", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "right_arrow" }]
+              },
+
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_0", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "insert" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  }
+                ],
+                "from": { "key_code": "keypad_period", "modifiers": { "mandatory": ["shift"] } },
+                "to": [{ "key_code": "delete_forward" }]
+              }
+            ]
+          },
+          {
+            "description": "Pseudo NumLock: toggle num_mode and use keypad nav cluster when num_mode=1 (Home/End/PgUp/PgDn + Arrows + Ins/Del) (only for vendor 3897 product 2406)",
+            "manipulators": [
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 0 }
+                ],
+                "from": { "key_code": "keypad_num_lock" },
+                "to": [{ "set_variable": { "name": "num_mode", "value": 1 } }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_num_lock" },
+                "to": [{ "set_variable": { "name": "num_mode", "value": 0 } }]
+              },
+
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_7" },
+                "to": [{ "key_code": "home" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_1" },
+                "to": [{ "key_code": "end" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_9" },
+                "to": [{ "key_code": "page_up" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_3" },
+                "to": [{ "key_code": "page_down" }]
+              },
+
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_8" },
+                "to": [{ "key_code": "up_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_2" },
+                "to": [{ "key_code": "down_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_4" },
+                "to": [{ "key_code": "left_arrow" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_6" },
+                "to": [{ "key_code": "right_arrow" }]
+              },
+
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_0" },
+                "to": [{ "key_code": "insert" }]
+              },
+              {
+                "type": "basic",
+                "conditions": [
+                  {
+                    "type": "device_if",
+                    "identifiers": [
+                      { "vendor_id": 3897, "product_id": 2406, "is_keyboard": true }
+                    ]
+                  },
+                  { "type": "variable_if", "name": "num_mode", "value": 1 }
+                ],
+                "from": { "key_code": "keypad_period" },
+                "to": [{ "key_code": "delete_forward" }]
+              }
+            ]
+          }
+        ]
+      },
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+    }
+  ]
+}
